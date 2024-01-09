@@ -1,13 +1,19 @@
 # UKFTractography Container
 
-This repository provides a container image for [UKFTractography](https://github.com/pnlbwh/ukftractography) with Slicer 4 (revision 28257).
+This repository provides a container image for:
 
-## Development notes you can ignore
+- [UKFTractography](https://github.com/pnlbwh/ukftractography)
+- Slicer 4 (revision 28257)
+- [whitematteranalysis @ commit 9d24e5e](https://github.com/SlicerDMRI/whitematteranalysis/tree/9d24e5e832ceb02ef0fce47f1089774e8e47d407) using Python 2.7
 
-Other apt packages necesary to run Slicer GUI, but not UKFTractography:
+## Usage: `UKFTractography`
 
+```shell
+apptainer exec docker://docker.io/fnndsc/ukftractography:latest Slicer --launch UKFTractography
 ```
-libxrender-dev libgl1-mesa-glx
-libpulse-mainloop-glib0 libnss3 libxcomposite-dev libxcursor-dev libxtst6 libfreetype6
-libfontconfig libxrandr2 libasound2 libegl1
+
+### Usage: `wm_harden_transform.py`
+
+```shell
+apptainer exec docker://docker.io/fnndsc/ukftractography:latest wm_harden_transform.py -t ... ... ... /opt/Slicer-4.10.2/Slicer
 ```
