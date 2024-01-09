@@ -14,6 +14,9 @@ apptainer exec docker://docker.io/fnndsc/ukftractography:latest Slicer --launch 
 
 ### Usage: `wm_harden_transform.py`
 
+> [!WARNING]  
+> `wm_harden_transform.py` opens `Slicer` which requires an X server, even though no window is shown.
+
 ```shell
 apptainer exec docker://docker.io/fnndsc/ukftractography:latest wm_harden_transform.py -t ... ... ... /opt/Slicer-4.10.2/Slicer
 ```
